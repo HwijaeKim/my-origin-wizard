@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>My Wizard Archive</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+
+<div id="wrap">
+    <section id="popup">
+        <div class="win_top">
+            <div class="win_btn">
+                <img src="https://synologykct.synology.me/web_interaction/W2/win_btn3.png">
+                <img class="win_max" src="https://synologykct.synology.me/web_interaction/W2/win_btn2.png">
+                <img src="https://synologykct.synology.me/web_interaction/W2/win_btn1.png">
+            </div>
+        </div>
+    </section>
+
+
+    <div id="win_container">
+        <div class="win_top">
+            <span class="name">Welcome to My YOUTH SIGHT.</span>
+            <div class="win_btn">
+                <img src="https://synologykct.synology.me/web_interaction/W2/win_btn3.png">
+                <img class="max" src="https://synologykct.synology.me/web_interaction/W2/win_btn2.png">
+                <img src="https://synologykct.synology.me/web_interaction/W2/win_btn1.png">
+            </div>
+        </div>
+
+        <div id="win_contents">
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Elevator.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Pivot.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Nintendo DSi.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Minecraft.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Motion.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Adobe Systems.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">COVID X Animal Crossing.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">High Degree.exe</div>
+            </div>
+
+            <div class="iconFlex">
+                <div class="imgBox"></div>
+                <div class="textBox">Weight.exe</div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script>
+    $(() => {
+        $('#win_container').draggable();
+    })
+
+
+
+    const icons = document.querySelectorAll('.iconFlex');
+    const popupBox = document.getElementById('popup');
+
+    icons.forEach((icon,index) => {
+        icon.addEventListener('click', () => {
+            popupBox.classList.add('active');
+
+            setTimeout(() => {
+                window.location.href = `./${index + 1}.html`;
+            }, 1000);
+        })
+    })
+
+
+    const container = document.getElementById('win_container');
+    const maxBtn = document.querySelector('.max');
+
+    maxBtn.addEventListener('click', () => {
+        container.classList.toggle('max');
+    })
+
+    // mac_max.addEventListener('click', () => {
+    //     mac_con.classList.toggle('max');
+    // })
+
+
+
+
+
+
+</script>
+</body>
+</html>
