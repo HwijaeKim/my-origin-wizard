@@ -10,6 +10,7 @@ body {
     background: url("../sources/index/desert_day_full.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 
