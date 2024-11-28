@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>My Wizard Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/index.css">
+<!--    Web Fonts 선언-->
+    <link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
+
+<!--    스타일시트 선언-->
+    <link rel="stylesheet" href="./style/common.css">
+    <link rel="stylesheet" href="./style/index.css">
 </head>
 <body>
 
@@ -101,46 +106,9 @@
 
 </div>
 
-
+<!--스크립트 선언-->
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
-<script>
-    $(() => {
-        $('#win_container').draggable();
-    })
-
-
-
-    const icons = document.querySelectorAll('.iconFlex');
-    const popupBox = document.getElementById('popup');
-
-    icons.forEach((icon,index) => {
-        icon.addEventListener('click', () => {
-            popupBox.classList.add('active');
-
-            setTimeout(() => {
-                window.location.href = `./${index + 1}.html`;
-            }, 1000);
-        })
-    })
-
-
-    const container = document.getElementById('win_container');
-    const maxBtn = document.querySelector('.max');
-
-    maxBtn.addEventListener('click', () => {
-        container.classList.toggle('max');
-    })
-
-    // mac_max.addEventListener('click', () => {
-    //     mac_con.classList.toggle('max');
-    // })
-
-
-
-
-
-
-</script>
+<script src="./script/index.js"></script>
 </body>
 </html>
