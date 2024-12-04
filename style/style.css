@@ -70,7 +70,7 @@
 }
 
 #win_container.max {
-    position: relative;
+    /*position: relative;*/
     transition: transform .75s ease;
 
     animation: win_max forwards .75s;
