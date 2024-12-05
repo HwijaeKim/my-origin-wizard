@@ -9,6 +9,7 @@
 html {
     /*font-family: 'SUIT', sans-serif;*/
     font-family: D2Coding, 'D2 coding', monospace;
+    overflow: hidden;
 }
 
 header {
