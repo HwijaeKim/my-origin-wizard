@@ -27,16 +27,16 @@ header .name {
     font-size: 16px;
     color: #393939;
 }
-.win_btn {
+.header_btn {
     /*border: solid 1px red;*/
     float: right;
     margin-right: 15px;
     margin-top: 12px;
 }
-.win_btn img {
+.header_btn img {
     width: 20px;
     margin-left: 10px;
 }
-.win_close:hover {
+.header_close:hover {
     opacity: .5;
 }

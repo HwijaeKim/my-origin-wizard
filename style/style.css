@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-/*==========index.html==========*/
+/*====================index.html====================*/
 #index-bg {
     position: fixed;
     width: 100%;
@@ -170,7 +170,7 @@
 
 
 
-/*==========1.html==========*/
+/*====================1.html====================*/
 
 
 
@@ -178,7 +178,7 @@
 
 
 
-/*==========4.html==========*/
+/*====================4.html====================*/
 .container {
     position: absolute;
     top: 50%;
@@ -256,14 +256,76 @@
 
 
 
+/*====================5.html====================*/
+section#ae_container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid .5px #b0b0b0;
+    /*min-width: 1050px;*/
+    /*max-width: 2560px;*/
+    width: 70vw;
+    aspect-ratio: 1 / .7;
+    background: #2a2a2a;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
+}
+#ae_top {
+    width: 100%;
+    height: 40px;
+    /*border: solid 1px red;*/
+    background: #f1f1f1;
+    border-bottom: solid .25px #b0b0b0;
+
+}
+#ae_top .name {
+    /*border: solid 1px red;*/
+    vertical-align: center;
+    height: 45px;
+    margin-left: 15px;
+    align-content: center;
+    position: absolute;
+    font-size: 14px;
+    color: #727272;
+}
+
+/*원*/
+#ball {
+    position: absolute;
+    width: 8vw;
+    aspect-ratio: 1 / 1;
+    top: 20%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* After Effects 스피드 그래프 */
+#speed-graph {
+    border: solid 1px red;
+    /*display: inline;*/
+    position: absolute;
+    width: 100%;
+    bottom: 15%;
+}
+#speed-graph .svg-graph {
+    /*border: solid 1px blue;*/
+    display: flex;
+    margin: 0 auto;
+    width: 95%;
+}
+#bezier-control {
+    transition: d .5s ease;
+}
 
 
 
 
 
 
-
-/*==========7.html==========*/
+/*====================7.html====================*/
 .watercan {
     animation: watercan 4s infinite alternate;
     transform-origin: 450px 800px;
