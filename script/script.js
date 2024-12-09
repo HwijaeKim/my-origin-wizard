@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     /**
      * 현재 열람 중인 html 파일명 불러오기
      *
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================index.html====================*/
-    if (currentPage.includes('index.html') && currentPage.includes('')) {
+    if (currentPage.includes('index.html') || currentPage.includes('')) {
 
         $(() => {
             $('#win_container').draggable();
