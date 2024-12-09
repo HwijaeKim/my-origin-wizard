@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================index.html====================*/
-    if (currentPage.includes('index.html') || currentPage.includes('')) {
+    if (currentPage.includes('index.html')) {
 
         $(() => {
             $('#win_container').draggable();
