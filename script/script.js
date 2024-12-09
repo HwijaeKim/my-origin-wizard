@@ -187,7 +187,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================6.html====================*/
+    if (currentPage.includes('6.html')) {
+        const loadingBox = document.getElementById('loadingBox');
+        const mainContents = document.getElementById('mainContents')
 
+        setTimeout(() => {
+            loadingBox.style.display = 'none';
+            document.body.style.background = 'white';
+            mainContents.style.display = 'block'
+        }, 100)
+
+
+
+        const radio = document.querySelectorAll('input[type="radio"]');
+        const loading = document.querySelector('.character');
+        const imgChar = document.querySelector('.img_cha');
+
+        radio.forEach(item => {
+            item.addEventListener('click', () => {
+
+                if(item.value === 'ps') {
+                    document.body.style.background = 'white'
+                    loading.style.background = '#31A8FF';
+                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.backgroundSize = 'contain';
+                }
+
+                else if(item.value === 'ai') {
+                    document.body.style.background = 'white'
+                    loading.style.background = '#FF9A00';
+                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.backgroundSize = 'contain';
+                }
+
+                else if(item.value === 'xd') {
+                    document.body.style.background = 'white'
+                    loading.style.background = '#FF61F6';
+                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.backgroundSize = 'contain';
+                }
+
+                else if(item.value === 'pr') {
+                    document.body.style.background = 'white'
+                    loading.style.background = '#9999FF';
+                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.backgroundSize = 'contain';
+                }
+
+                else if(item.value === 'ae') {
+                    document.body.style.background = 'white'
+                    loading.style.background = '#9999FF';
+                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.backgroundSize = 'contain';
+                }
+
+            })
+        })
+    }
 
 
 
@@ -209,6 +265,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================9.html====================*/
+    if (currentPage.includes('9.html')) {
+
+        let modal = document.getElementById('modal');
+        let modalBtn = document.querySelector('.close');
+        let modalImg = document.querySelector('.modal_img');
+        let bg = document.getElementById('dark_bg');
+        let imgsClick = document.querySelectorAll('.imgs');
+
+
+        let modalTitle = document.querySelector('.modal_title');
+        let modalSub = document.querySelector('.modal_sub');
+        let texts = [
+            {
+                title: 'VIDEO',
+                sub: '2020.08 <br><br>고등학교 3학년, 졸업작품 프로젝트로 진행한 비주얼 모션그래픽스 동영상의 포스터다.<br>'
+            },
+            {
+                title: 'DESIGN',
+                sub: '2020.07 <br><br>' +
+                    '닌텐도사의 <젤다의 전설: 브레스 오브 더 와일드>의 인게임 집을' +
+                    '<br>3Ds MAX와 Cinema 4D + Octane Render를 이용하여 제작하였다.' +
+                    '<br><br>3Ds MAX로는 오브젝트 모델링을 진행하였고, 재질과 라이팅을 Cinema 4D와 Octane Render를 이용하여 제작했다.'
+            },
+            {
+                title: 'CODE',
+                sub: '2023.12 <br><br>' +
+                    '대학교 [콘텐츠디자인] 중간과 기말 프로젝트로 UI/UX 관련 가상의 페이지를 제작하였다.' +
+                    '<br>큰 키워드 아랍 에미리트라는 국가를 지정하였고 사막의 반도체를 생각하며 콘텐츠를 기획했다.'
+
+            },
+        ];
+
+
+
+        imgsClick.forEach((img, index) => {
+            img.addEventListener('click', (event) => {
+                let src;
+                if (img.querySelector('img')) {
+                    src = img.querySelector('img').src;
+                } else if (img.querySelector('video')) {
+                    src = img.querySelector('video').src;
+                }
+
+                    modalImg.style.backgroundImage = 'url('+ src +')';
+                    modalTitle.innerHTML = texts[index].title;
+                    modalSub.innerHTML = texts[index].sub;
+
+                    modal.classList.add('active');
+                    bg.classList.add('active');
+
+            })
+        })
+
+        modalBtn.addEventListener('click', () => {
+            modalImg.innerHTML = '';
+            modal.classList.remove('active');
+            bg.classList.remove('active');
+        })
+
+    }
+
 
 
 

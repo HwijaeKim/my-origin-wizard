@@ -529,6 +529,219 @@ section#ae_container {
 
 
 
+/*====================6.html====================*/
+section#loadingBox {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+section#loadingBox p {
+    font-weight: 900;
+    /*font-size: 16px;*/
+    /*border: solid 1px red;*/
+    width: 100%;
+    text-align: center;
+}
+
+#loading {
+    width: 200px;
+    height: 200px;
+    background: url("../sources/06adobe/loading.png");
+    background-size: cover;
+
+    animation: clock 1s infinite steps(12) ;
+
+}
+
+@keyframes clock {
+    100% {background-position: -4800px 0;}
+}
+
+
+
+section#mainContents {
+    display: none;
+}
+.character
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 500px;
+    background: skyblue;
+
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.character .img_cha {
+    position: absolute;
+    bottom: 35px;
+    left: calc((500px - 130px) / 2);
+
+    width: 130px;
+    height: 130px;
+    background: url("../sources/06adobe/ps.png") no-repeat;
+    background-size: contain;
+    animation: jump .5s cubic-bezier(0.1, 0.02, 0.19, 0.96) infinite alternate;
+    z-index: 2;
+}
+
+@keyframes jump {
+    0% {bottom: 35px;}
+    100% {bottom: 140px;}
+}
+
+.character
+.img_shadow {
+    position: absolute;
+    bottom: 30px;
+    left: calc((500px - 100px) / 2);
+
+    width: 100px;
+    height: 20px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+
+    transform: scale(1);
+
+    animation: shadow .5s cubic-bezier(0.1, 0.02, 0.19, 0.96) infinite alternate;
+}
+
+@keyframes shadow {
+    0% {transform: scale(1); background: rgba(0, 0, 0, .5);}
+    100% {transform: scale(.6); background: rgba(0, 0, 0, .2);}
+}
+
+.character
+.bgWrap > div {  /*.bgWrap 자식요소 div를 공통으로 선언, 다만 위험한 방법일 수 있음.*/
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+.character
+.bgWrap .red {
+    background: tomato;
+    bottom: 132px;
+    left: 30.33%;
+    animation: flow1 1s cubic-bezier(0, 0.13, 0.17, 0.93) infinite;
+}
+@keyframes flow1 {
+    0% {opacity: 0;}
+    5% {opacity: 1; bottom: 132px; left: 30.33%;}
+    80% {opacity: 1;}
+    100% {opacity: 0; bottom: 320px; left: 28%;}
+}
+
+
+.character
+.bgWrap .spring {
+    background: springgreen;
+    bottom: 172px;
+    left: 30%;
+    animation: flow2 1s cubic-bezier(0, 0.13, 0.17, 0.93) infinite;
+}
+@keyframes flow2 {
+    0% {opacity: 0;}
+    5% {opacity: 1; bottom: 172px; left: 30%;}
+    80% {opacity: 1;}
+    100% {opacity: 0; bottom: 342px; left: 17%;}
+}
+
+
+.character
+.bgWrap .green {
+    background: darkolivegreen;
+    bottom: 132px;
+    left: 60%;
+    animation: flow3 1s cubic-bezier(0, 0.13, 0.17, 0.93) infinite;
+}
+@keyframes flow3 {
+    0% {opacity: 0;}
+    5% {opacity: 1; bottom: 172px; left: 60%;}
+    80% {opacity: 1;}
+    100% {opacity: 0; bottom: 372px; left: 70%;}
+}
+
+
+.character
+.bgWrap .yellow {
+    background: yellow;
+    bottom: 132px;
+    left: 63%;
+    animation: flow4 1s cubic-bezier(0, 0.13, 0.17, 0.93) infinite;
+}
+@keyframes flow4 {
+    0% {opacity: 0;}
+    5% {opacity: 1; bottom: 172px; left: 63%;}
+    80% {opacity: 1;}
+    100% {opacity: 0; bottom: 312px; left: 80%;}
+}
+
+.height .bar {
+    position: absolute;
+    width: 1px;
+    height: 250px;
+    background: white;
+    bottom: 35px;
+    left: 5%;
+}
+.height .triangle {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-bottom: calc( 10px * 1.732 ) solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: rotateZ(-90deg);
+
+    left: 5%;
+    bottom: 45px;
+    animation: height .5s cubic-bezier(0.1, 0.02, 0.19, 0.96) infinite alternate;
+}
+@keyframes height {
+    0% {bottom: 45px;}
+    100% {bottom: 260px;}
+}
+
+
+
+
+.toggle {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.toggle input[type="radio"] {
+    display: none;
+}
+.toggle label {
+    cursor: pointer;
+}
+.toggle span {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #ddd;
+}
+.toggle input[type="radio"]:checked ~ span {
+    background: #333;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
 
 /*====================7.html====================*/
 .watercan {
@@ -620,6 +833,244 @@ section#ae_container {
 }
 
 
+
+
+
+
+
+
+/*====================9.html====================*/
+section#modal {
+    font-family: 'SUIT', sans-serif;
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+    width: 50vw;
+    height: 30vw;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 75px rgba(0, 0, 0, 0.3);
+    /*border-radius: 1.5em;*/
+    z-index: 2;
+
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+
+    animation: modalAniOut .5s ease 0s 1 normal forwards;
+}
+section#modal.active {
+    /*opacity: 1;*/
+    visibility: visible;
+    animation: modalAni .5s ease 0s 1 normal forwards;
+}
+article.modal_content {
+    /*border: solid 1px red;*/
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    vertical-align: middle;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+article.modal_content p {
+    /*border: solid 1px red;*/
+    /*height: 100%;*/
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 1.5%;
+}
+
+.modal_container {
+    width: 100%;
+    height: 94%;
+    /*border: solid 1px blue;*/
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.modalCon {
+    /*border: solid 1px green;*/
+    /*flex: 1 1 80px;*/
+}
+.modal_img {
+    /*border: solid 1px red;*/
+    width: 50%;
+    height: 100%;
+    /*background-image: url("../sources/profile.jpg");*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.modal_title {
+    width: 48.5%;
+    height: 20%;
+    font-size: 50px;
+    font-weight: 900;
+    border-bottom: solid .5px rgba(0, 0, 0, .5);
+    margin: 0 0 1rem 1rem;
+}
+.modal_sub {
+    width: 48.5%;
+    height: 70%;
+    font-size: 24px;
+    color: gray;
+    font-weight: 200;
+    /*line-height: 1.25;*/
+    word-break: keep-all;
+    margin: 1rem 0 0 1rem;
+}
+
+
+
+.modal_content h1 {
+
+    font-weight: 900;
+    font-size: 35px;
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.close {
+    border: none;
+    /*font-family: "Elice DX Neolli", sans-serif;*/
+    font-family: 'SUIT', sans-serif;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 1.5vmin;
+    font-weight: 100;
+    padding: 1vmin 2vmin;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.close:hover {
+    /*font-weight: 600;*/
+    background: #B45F54;
+}
+.close:active {
+    opacity: .5;
+}
+
+
+
+#dark_bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+    z-index: 1; /* 다른 요소들 위에 위치하도록 설정 */
+}
+#dark_bg.active {
+    display: block;
+}
+
+
+#img_container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    justify-content: space-between;
+}
+.imgs {
+    /*display: flex;*/
+    border: solid 1px blue;
+    width: 20vw;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    /*text-align: center;*/
+}
+.imgs img {
+    /*border: solid 1px green;*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 container를 꽉 채우도록 설정 */
+    object-position: center; /* 이미지가 중앙에 위치하도록 설정 */
+}
+.text {
+    /*border: solid 1px red;*/
+    width: 20vw;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    align-content: center;
+    text-align: center;
+    font-weight: 900;
+    font-size: 35px;
+    word-break: keep-all;
+    opacity: 0;
+    z-index: 1;
+}
+
+.imgs:hover .text {
+    opacity: 1;
+    animation: imageHover .3s ease 0s 1 normal forwards;
+}
+.imgs:hover img, .imgs:hover video {
+    filter: brightness(0.35);
+    transition: ease .3s;
+}
+@keyframes modalAni {
+    0% {
+        opacity: 0;
+        transform: scale(.7);
+        /*transform-origin: -50% -50%;*/
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        /*transform-origin: -50% -50%;*/
+
+    }
+}
+@keyframes modalAniOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        /*transform-origin: -50% -50%;*/
+
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(.7);
+        /*transform-origin: -50% -50%;*/
+
+    }
+}
+
+
+
+
+
+@keyframes imageHover {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 
