@@ -170,12 +170,178 @@
 
 
 
-/*====================1.html====================*/
-#pivot-container {
-    border: solid 1px red;
-    width: 10vw;
-    aspect-ratio: 1 / 1;
+/*====================2.html====================*/
+section#pivot_container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid .5px #b0b0b0;
+    /*min-width: 1050px;*/
+    /*max-width: 2560px;*/
+    width: 60vw;
+    /*max-height: 45vw;*/
+    aspect-ratio: 1 / .7;
+    background: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
 }
+#pivot_top {
+    width: 100%;
+    height: 40px;
+    /*border: solid 1px red;*/
+    background: #f1f1f1;
+    border-bottom: solid .25px #b0b0b0;
+
+}
+#pivot_top .name {
+    /*border: solid 1px red;*/
+    vertical-align: center;
+    height: 45px;
+    margin-left: 15px;
+    align-content: center;
+    position: absolute;
+    font-size: 14px;
+    color: #353535;
+}
+
+#pivot_contents {
+    /*border: solid 1px red;*/
+    width: 100%;
+    height: 55%;
+}
+
+
+#pivot-container {
+    /*border: solid 1px red;*/
+    /*display: inline-block;*/
+    width: 20vw;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    background-image: url('../sources/02pivot/pivot.webp');
+    background-size: cover;
+    animation: pivot_ani 1.5s steps(18) forwards infinite alternate;
+}
+@keyframes pivot_ani {
+    100% { background-position: calc(20vw * 18) 0; }
+}
+
+.select-bg, .bg-text {
+    padding: 15px 20px;
+    background: #C7C7C7;
+    border-top: solid 3px #F4F4F4;
+    border-left: solid 3px #F4F4F4;
+    border-right: solid 3px #939393;
+    border-bottom: solid 3px #939393;
+}
+.select-bg {
+    position: absolute;
+    display: block;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 700;
+}
+.bg-text {
+    position: absolute;
+    display: block;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;}
+
+
+
+
+
+
+/*====================3.html====================*/
+
+.box-one {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    animation: box-rotate .75s 2.5s forwards;
+    z-index: 0;
+}
+@keyframes box-rotate {
+    100% { transform: rotate(-15deg); }
+}
+
+.post-box {
+    /*border: solid 1px red;*/
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    /*transform: translate(-50%, -50%);*/
+    background-image: url('../sources/03nintendo/post_box.svg');
+    width: 400px;
+    height: 250px;
+    animation: box-to-left .75s 2.5s forwards, transp .75s 4.5s forwards;
+}
+@keyframes box-to-left {
+    100% {transform: translateX(-630px) scale(.6);}
+}
+.post-box-open {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    background: #937861;
+    width: 200px;
+    height: 250px;
+    z-index: -2;
+    animation: box-open .75s .5s forwards, box2-to-left .75s 2.5s forwards, transp .75s 4.5s forwards;
+}
+@keyframes box-open {
+    100% { transform: translateX(330px);}
+}
+@keyframes box2-to-left {
+    100% {transform: translateX(-380px) scale(.6);}
+}
+
+.nintendo-box {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    background-image: url('../sources/03nintendo/nin_box.svg');
+    width: 430px;
+    height: 200px;
+    z-index: -1;
+    transform: scale(.8);
+    animation: nin-box-release .75s 1.5s forwards, nin-box-center .75s 3s forwards, transp .75s 4.5s forwards;
+}
+@keyframes nin-box-release {
+    100% {
+        transform: scale(1) translateX(450px);
+    }
+}
+@keyframes nin-box-center {
+    100% { transform: scale(1.5) translateX(50px) rotate(-15deg); }
+}
+@keyframes transp {
+    100% { opacity: 0; }
+}
+
+.nintendo-device {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    background-image: url('../sources/03nintendo/dsi.svg');
+    background-size: cover;
+    width: 339px;
+    height: 187px;
+    transform: scale(0);
+    animation: dsi .75s 4s forwards, dsi-rotate 3s 4s infinite;
+}
+@keyframes dsi {
+    100% { transform: scale(2.5) translateX(50px) rotate(-375deg); }
+}
+/*@keyframes dsi-rotate {*/
+/*    100% { transform: rotateZ(360deg); }*/
+/*}*/
+
+
 
 
 
@@ -437,3 +603,30 @@ section#ae_container {
 .bg7 {
     background: url("../sources/07animal_crossing/bg.webp");
 }
+
+
+
+
+
+
+
+
+/*====================8.html====================*/
+#wrap8 {
+    /*border: solid 1px red;*/
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+

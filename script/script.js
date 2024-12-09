@@ -71,6 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================2.html====================*/
+    if (currentPage.includes('2.html')) {
+        const color = document.querySelector('input[type="color"]');
+        const pivot = document.getElementById('pivot-container');
+        let color_txt = document.querySelector('.bg-text');
+        let bg = document.getElementById('pivot_contents');
+
+        color.addEventListener('change', () => {
+            color_txt.innerHTML = `Current Background Color: ${color.value}`;
+            bg.style.backgroundColor = color.value;
+
+            if (color.value === '#000000') {
+                pivot.style.filter = 'invert(100%)'
+            }
+            else {
+                pivot.style.filter = 'invert(0)'
+            }
+        })
+
+    }
 
 
 
@@ -78,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================3.html====================*/
+    // no script.
 
 
 
@@ -174,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================7.html====================*/
+    // no script.
 
 
 
@@ -188,6 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================9.html====================*/
+
+
+
 
 });
 
