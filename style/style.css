@@ -171,6 +171,11 @@
 
 
 /*====================1.html====================*/
+#pivot-container {
+    border: solid 1px red;
+    width: 10w;
+    aspect-ratio: 1 / 1;
+}
 
 
 
