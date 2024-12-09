@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * 위와 같은 if문을 통해 참인 영역만 실행하도록 코드를 구성
      */
     const currentPage = window.location.pathname;
+    console.log(currentPage);
 
 
     /*====================index.html====================*/
-    if (currentPage.includes('index.html') || currentPage.includes('')) {
+    if (currentPage.includes('index.html') || currentPage.includes('/')) {
 
         $(() => {
             $('#win_container').draggable();
