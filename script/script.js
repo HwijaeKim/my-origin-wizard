@@ -258,6 +258,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================8.html====================*/
+    if (currentPage.includes('8.html')) {
+        const draggable = document.getElementById('drag');
+        let offsetX = 0, offsetY = 0;
+        let isDragging = false;
+
+        const stroke1 = document.querySelector('.line1');
+        const stroke2 = document.querySelector('.line2');
+        const stroke3 = document.querySelector('.line3');
+        const fill = document.getElementById('sunrin-fill');
+        const music = document.getElementById('sunrin-sound');
+
+
+        draggable.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - draggable.offsetLeft;
+            offsetY = e.clientY - draggable.offsetTop;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                draggable.style.left = e.clientX - offsetX + 'px';
+                draggable.style.top = e.clientY - offsetY + 'px';
+
+                const left = e.clientX - offsetX;
+                const top = e.clientY - offsetY;
+                console.log(top, left);
+                if (top >= 650 && top <= 700 && left >= 840 && left <= 940) {
+                    stroke1.classList.add('active');
+                    stroke2.classList.add('active');
+                    stroke3.classList.add('active');
+                    fill.classList.add('active');
+                    music.play();
+                }
+            }
+
+
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+
+        // Dev Only
+        // path = document.querySelector('.line3').getTotalLength();
+        // console.log(path);
+
+    }
+
+
+
 
 
 

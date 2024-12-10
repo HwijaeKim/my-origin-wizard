@@ -350,6 +350,13 @@ section#pivot_container {
 
 
 /*====================4.html====================*/
+/*#bg {*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    background: url('../sources/04minecraft/bg.jpg');*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*}*/
 .container {
     position: absolute;
     top: 50%;
@@ -832,6 +839,96 @@ section#mainContents {
     background-size: cover;
 }
 
+#drag {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: url("../sources/08sunrin/cap.png");
+    background-size: contain;
+    cursor: pointer;
+    z-index: 1;
+}
+#char-container {
+    /*border: solid 1px red;*/
+    width: 350px;
+    height: 350px;
+    background: url("../sources/08sunrin/char.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#sunrin-stroke {
+    /*border: solid 1px red;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+#sunrin-fill {
+    position: absolute;
+    top: 49.9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    z-index: -2;
+
+}
+#sunrin-fill.active {
+    animation: sunrin .75s 2s ease forwards;
+}
+@keyframes sunrin {
+    100% { opacity: 1; }
+}
+
+
+
+.line1 {
+    stroke-dasharray: 1544; /*이 값은 path의 길이와 동일합니다*/
+    stroke-dashoffset: 0;
+    opacity: 0;
+}
+.line2 {
+    stroke-dasharray: 469; /*이 값은 path의 길이와 동일합니다*/
+    stroke-dashoffset: 0;
+    opacity: 0;
+}
+.line3 {
+    stroke-dasharray: 2097; /*이 값은 path의 길이와 동일합니다*/
+    stroke-dashoffset: 0;
+    opacity: 0;
+}
+
+.line1.active {
+    opacity: 1;
+    animation: dash1 2s ease forwards;
+}
+.line2.active {
+    opacity: 1;
+    animation: dash2 2s ease forwards;
+}
+.line3.active {
+    opacity: 1;
+    animation: dash3 2s ease forwards;
+}
+
+@keyframes dash1 {
+    0% {stroke-dashoffset: 1544; }
+    100% { stroke-dashoffset: 0; }
+}
+@keyframes dash2 {
+    0% {stroke-dashoffset: 469; }
+    100% { stroke-dashoffset: 0; }
+}
+@keyframes dash3 {
+    0% {stroke-dashoffset: 2097; }
+    100% { stroke-dashoffset: 0; }
+}
 
 
 
@@ -987,7 +1084,8 @@ article.modal_content p {
 }
 .imgs {
     /*display: flex;*/
-    border: solid 1px blue;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    border-radius: 2vw;
     width: 20vw;
     aspect-ratio: 1 / 1;
     overflow: hidden;
