@@ -329,35 +329,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(item.value === 'ps') {
                     document.body.style.background = 'white'
                     loading.style.background = '#31A8FF';
-                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.background = `url("./sources/06adobe/${item.value}.png") no-repeat`;
                     imgChar.style.backgroundSize = 'contain';
                 }
 
                 else if(item.value === 'ai') {
                     document.body.style.background = 'white'
                     loading.style.background = '#FF9A00';
-                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.background = `url("./sources/06adobe/${item.value}.png") no-repeat`;
                     imgChar.style.backgroundSize = 'contain';
                 }
 
                 else if(item.value === 'xd') {
                     document.body.style.background = 'white'
                     loading.style.background = '#FF61F6';
-                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.background = `url("./sources/06adobe/${item.value}.png") no-repeat`;
                     imgChar.style.backgroundSize = 'contain';
                 }
 
                 else if(item.value === 'pr') {
                     document.body.style.background = 'white'
                     loading.style.background = '#9999FF';
-                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.background = `url("./sources/06adobe/${item.value}.png") no-repeat`;
                     imgChar.style.backgroundSize = 'contain';
                 }
 
                 else if(item.value === 'ae') {
                     document.body.style.background = 'white'
                     loading.style.background = '#9999FF';
-                    imgChar.style.background = `url("../sources/06adobe/${item.value}.png") no-repeat`;
+                    imgChar.style.background = `url("./sources/06adobe/${item.value}.png") no-repeat`;
                     imgChar.style.backgroundSize = 'contain';
                 }
 
