@@ -199,13 +199,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // img의 index값에 따른 로고 변경
                 if (index === 0 ) {
-                    logoBox.style.background = "url('../sources/04game/minecraft.png') center no-repeat"
+                    logoBox.style.background = "url('./sources/04game/minecraft.png') center no-repeat"
                 }
                 else if (index === 1) {
-                    logoBox.style.background = "url('../sources/04game/roller.png') center no-repeat"
+                    logoBox.style.background = "url('./sources/04game/roller.png') center no-repeat"
                 }
                 else if (index === 2) {
-                    logoBox.style.background = "url('../sources/04game/zelda.png') center no-repeat"
+                    logoBox.style.background = "url('./sources/04game/zelda.png') center no-repeat"
                 }
             })
         })
