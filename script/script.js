@@ -74,12 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
         upBtn.addEventListener('click', () => {
             upBtn.classList.add('active');
 
+            // 초기 숫자 1 변수 선언 (지속해서 변하기 때문에 let으로)
             let num = 1;
+
+            // setInterval로 1초에 한 번씩 실행되도록
             let countNum = setInterval(() => {
                 if(num <= 9) {
                     floorTxt.innerHTML = `${num}.html`
                     num++;
                 }
+                // num이 9 이상이 되면 엘리베이터 문이 열리도록 구현
                 else if(num > 9) {
                     floorTxt.innerHTML = `Hello, World!`
                     upBtn.classList.remove('active');
@@ -87,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     RDoor.classList.add('active');}
 
             }, 1000);
-            num = 1;
         })
 
     }
@@ -105,10 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let color_txt = document.querySelector('.bg-text');
         let bg = document.getElementById('pivot_contents');
 
+        // 컬러값이 바뀌면 실행
         color.addEventListener('change', () => {
+            // 백틱을 이용한 innerHTML 출력
             color_txt.innerHTML = `Current Background Color: ${color.value}`;
             bg.style.backgroundColor = color.value;
 
+            // 배경 color가 완전한 검은색이 되면 pivot 색상반전
             if (color.value === '#000000') {
                 pivot.style.filter = 'invert(100%)'
             }
@@ -146,6 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const modalTitle = document.querySelector('.modal_title');
         const modalSub = document.querySelector('.modal_sub');
+
+        // 배열선언
         let texts = [
             {
                 title: '마인크래프트',
@@ -169,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
 
-
+        // 총 3개의 imgsClick forEach
         imgsClick.forEach((img, index) => {
             img.addEventListener('click', (event) => {
                 let src;
@@ -179,13 +187,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     src = img.querySelector('video').src;
                 }
 
+                // 클릭한 img에 대한 src 정보를 자동으로 받아와 모달에 할당
                 modalImg.style.backgroundImage = 'url('+ src +')';
+
+                // 배열로 선언한 텍스트 역시 자동으로 모달에 할당
                 modalTitle.innerHTML = texts[index].title;
                 modalSub.innerHTML = texts[index].sub;
 
                 modal.classList.add('active');
                 bg.classList.add('active');
 
+                // img의 index값에 따른 로고 변경
                 if (index === 0 ) {
                     logoBox.style.background = "url('../sources/04game/minecraft.png') center no-repeat"
                 }
@@ -198,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
 
+        //close버튼
         modalBtn.addEventListener('click', () => {
             modalImg.innerHTML = '';
             modal.classList.remove('active');
@@ -293,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadingBox = document.getElementById('loadingBox');
         const mainContents = document.getElementById('mainContents')
 
+        // 로딩창 구현 2.5초 뒤 자동으로 넘어감
         setTimeout(() => {
             loadingBox.style.display = 'none';
             document.body.style.background = 'white';
@@ -308,6 +322,10 @@ document.addEventListener('DOMContentLoaded', () => {
         radio.forEach(item => {
             item.addEventListener('click', () => {
 
+                /*
+                * 클릭한 radio의 value 값에 따른 설정 변경
+                * 더 간략하게 할 수 있는 방법이 존재할 것 같아 아쉬운 부분
+                * */
                 if(item.value === 'ps') {
                     document.body.style.background = 'white'
                     loading.style.background = '#31A8FF';
@@ -361,6 +379,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /*====================8.html====================*/
     if (currentPage.includes('8.html')) {
+
+        // JQuery UI 라이브러리 선언 없이 Vanilla JS로 구현한 드래그
         const draggable = document.getElementById('drag');
         let offsetX = 0, offsetY = 0;
         let isDragging = false;
@@ -385,7 +405,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const left = e.clientX - offsetX;
                 const top = e.clientY - offsetY;
-                console.log(top, left);
+                console.log(top, left); //Dev Only
+
+                // 특정 좌표값 범위 내 들어오게 된다면 svg애니메이션, 음악 재생
                 if (top >= 650 && top <= 700 && left >= 840 && left <= 940) {
                     stroke1.classList.add('active');
                     stroke2.classList.add('active');
@@ -398,6 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
 
+        // 마우스 클릭을 해제하면 드래그도 비활성화
         document.addEventListener('mouseup', () => {
             isDragging = false;
         });
@@ -445,6 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         ];
 
+        //forEach와 배열로 코드 대폭감소
         selectCode.forEach((i, index) => {
             i.addEventListener('click', () => {
                 rotateContainer.className = 'code-3d';
