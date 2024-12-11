@@ -135,32 +135,35 @@ document.addEventListener('DOMContentLoaded', () => {
     /*====================4.html====================*/
     if (currentPage.includes('4.html')) {
 
-        let modal = document.getElementById('modal');
-        let modalBtn = document.querySelector('.close');
-        let modalImg = document.querySelector('.modal_img');
-        let bg = document.getElementById('dark_bg');
-        let imgsClick = document.querySelectorAll('.imgs');
+        const modal = document.getElementById('modal');
+        const modalBtn = document.querySelector('.close');
+        const modalImg = document.querySelector('.modal_img');
+        const bg = document.getElementById('dark_bg');
+        const imgsClick = document.querySelectorAll('.imgs');
+
+        const logoBox = document.querySelector('.logo-box');
 
 
-        let modalTitle = document.querySelector('.modal_title');
-        let modalSub = document.querySelector('.modal_sub');
+        const modalTitle = document.querySelector('.modal_title');
+        const modalSub = document.querySelector('.modal_sub');
         let texts = [
             {
-                title: 'VIDEO',
-                sub: '2020.08 <br><br>고등학교 3학년, 졸업작품 프로젝트로 진행한 비주얼 모션그래픽스 동영상의 포스터다.<br>'
+                title: '마인크래프트',
+                sub: '마인크래프트는 저에게 매우 뜻깊은 게임입니다.<br><br>' +
+                    '명령어를 치기 위해 처음으로 영어를 배웠고 영상을 만들기 위해 3D 툴과 영상 편집 프로그램을 직접 다루기 시작했습니다.<br><br>' +
+                    '저와 가장 오래 한 게임이자 지금까지도 하고 있는 몇 안되는 게임입니다.'
             },
             {
-                title: 'DESIGN',
-                sub: '2020.07 <br><br>' +
-                    '닌텐도사의 <젤다의 전설: 브레스 오브 더 와일드>의 인게임 집을' +
-                    '<br>3Ds MAX와 Cinema 4D + Octane Render를 이용하여 제작하였다.' +
-                    '<br><br>3Ds MAX로는 오브젝트 모델링을 진행하였고, 재질과 라이팅을 Cinema 4D와 Octane Render를 이용하여 제작했다.'
+                title: '롤러코스터 타이쿤3',
+                sub: '정상인 사람도 이 게임만 하면 싸이코가 된다는 전설의 게임 <롤러코스터 타이쿤>입니다. <br><br>' +
+                    '놀이공원의 주인이 되어 자유롭게 또는 미션을 가지고 운영하는 게임으로 자유도가 꽤나 높다는 것이 특징입니다. <br><br>' +
+                    '그래서 그런가, 의도적으로 손님을 유배지로 보내거나 놀이기구를 고장내기도 합니다...'
             },
             {
-                title: 'CODE',
-                sub: '2023.12 <br><br>' +
-                    '대학교 [콘텐츠디자인] 중간과 기말 프로젝트로 UI/UX 관련 가상의 페이지를 제작하였다.' +
-                    '<br>큰 키워드 아랍 에미리트라는 국가를 지정하였고 사막의 반도체를 생각하며 콘텐츠를 기획했다.'
+                title: '젤다의 전설',
+                sub: '<젤다의 전설> 시리즈는 2020년도 닌텐도 스위치를 구입한 이후부터 지속적으로 플레이 하고 있는 게임 이입다. <br><br>' +
+                    '광활한 오픈월드에서 자유롭게 플레이하는 맛이 있습니다. <br><br>' +
+                    '비교적 신잡만 플레이한 유저여서인지 이전 타이틀을 못 해본 것이 아쉽게 다가옵니다... <br><br>'
 
             },
         ];
@@ -183,6 +186,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.add('active');
                 bg.classList.add('active');
 
+                if (index === 0 ) {
+                    logoBox.style.background = "url('../sources/04game/minecraft.png') center no-repeat"
+                }
+                else if (index === 1) {
+                    logoBox.style.background = "url('../sources/04game/roller.png') center no-repeat"
+                }
+                else if (index === 2) {
+                    logoBox.style.background = "url('../sources/04game/zelda.png') center no-repeat"
+                }
             })
         })
 
