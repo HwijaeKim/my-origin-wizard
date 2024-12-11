@@ -481,7 +481,7 @@ article.modal_content p {
 .modal_title {
     width: 48.5%;
     height: 20%;
-    font-size: 50px;
+    font-size: 2.7vw;
     font-weight: 900;
     border-bottom: solid .5px rgba(0, 0, 0, .5);
     margin: 0 0 1rem 1rem;
@@ -489,7 +489,7 @@ article.modal_content p {
 .modal_sub {
     width: 48.5%;
     height: 70%;
-    font-size: 24px;
+    font-size: 1.2vw;
     color: gray;
     font-weight: 200;
     /*line-height: 1.25;*/
@@ -537,8 +537,8 @@ article.modal_content p {
     top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35vw;
-    height: 20vw;
+    width: 600px;
+    height: 450px;
     background: url('../sources/04game/minecraft.png') center no-repeat;
 }
 
