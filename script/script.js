@@ -64,6 +64,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================1.html====================*/
+    if (currentPage.includes('1.html')) {
+
+        const upBtn = document.querySelector('.up-btn');
+        const floorTxt = document.querySelector('.floor');
+        const LDoor = document.querySelector('.L-door');
+        const RDoor = document.querySelector('.R-door');
+
+        upBtn.addEventListener('click', () => {
+            upBtn.classList.add('active');
+
+            let num = 1;
+            let countNum = setInterval(() => {
+                if(num <= 9) {
+                    floorTxt.innerHTML = `${num}.html`
+                    num++;
+                }
+                else if(num > 9) {
+                    floorTxt.innerHTML = `Hello, World!`
+                    upBtn.classList.remove('active');
+                    LDoor.classList.add('active');
+                    RDoor.classList.add('active');}
+
+            }, 1000);
+            num = 1;
+        })
+
+    }
+
 
 
 
@@ -105,6 +133,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*====================4.html====================*/
+    if (currentPage.includes('4.html')) {
+
+        let modal = document.getElementById('modal');
+        let modalBtn = document.querySelector('.close');
+        let modalImg = document.querySelector('.modal_img');
+        let bg = document.getElementById('dark_bg');
+        let imgsClick = document.querySelectorAll('.imgs');
+
+
+        let modalTitle = document.querySelector('.modal_title');
+        let modalSub = document.querySelector('.modal_sub');
+        let texts = [
+            {
+                title: 'VIDEO',
+                sub: '2020.08 <br><br>고등학교 3학년, 졸업작품 프로젝트로 진행한 비주얼 모션그래픽스 동영상의 포스터다.<br>'
+            },
+            {
+                title: 'DESIGN',
+                sub: '2020.07 <br><br>' +
+                    '닌텐도사의 <젤다의 전설: 브레스 오브 더 와일드>의 인게임 집을' +
+                    '<br>3Ds MAX와 Cinema 4D + Octane Render를 이용하여 제작하였다.' +
+                    '<br><br>3Ds MAX로는 오브젝트 모델링을 진행하였고, 재질과 라이팅을 Cinema 4D와 Octane Render를 이용하여 제작했다.'
+            },
+            {
+                title: 'CODE',
+                sub: '2023.12 <br><br>' +
+                    '대학교 [콘텐츠디자인] 중간과 기말 프로젝트로 UI/UX 관련 가상의 페이지를 제작하였다.' +
+                    '<br>큰 키워드 아랍 에미리트라는 국가를 지정하였고 사막의 반도체를 생각하며 콘텐츠를 기획했다.'
+
+            },
+        ];
+
+
+
+        imgsClick.forEach((img, index) => {
+            img.addEventListener('click', (event) => {
+                let src;
+                if (img.querySelector('img')) {
+                    src = img.querySelector('img').src;
+                } else if (img.querySelector('video')) {
+                    src = img.querySelector('video').src;
+                }
+
+                modalImg.style.backgroundImage = 'url('+ src +')';
+                modalTitle.innerHTML = texts[index].title;
+                modalSub.innerHTML = texts[index].sub;
+
+                modal.classList.add('active');
+                bg.classList.add('active');
+
+            })
+        })
+
+        modalBtn.addEventListener('click', () => {
+            modalImg.innerHTML = '';
+            modal.classList.remove('active');
+            bg.classList.remove('active');
+        })
+
+    }
+
+
 
 
 
@@ -195,11 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingBox.style.display = 'none';
             document.body.style.background = 'white';
             mainContents.style.display = 'block'
-        }, 100)
+        }, 2500)
 
 
 
-        const radio = document.querySelectorAll('input[type="radio"]');
+        const radio = document.querySelectorAll('input[name="mode"]');
         const loading = document.querySelector('.character');
         const imgChar = document.querySelector('.img_cha');
 
@@ -317,62 +407,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /*====================9.html====================*/
     if (currentPage.includes('9.html')) {
-
-        let modal = document.getElementById('modal');
-        let modalBtn = document.querySelector('.close');
-        let modalImg = document.querySelector('.modal_img');
-        let bg = document.getElementById('dark_bg');
-        let imgsClick = document.querySelectorAll('.imgs');
-
-
-        let modalTitle = document.querySelector('.modal_title');
-        let modalSub = document.querySelector('.modal_sub');
-        let texts = [
+        const selectCode = document.querySelectorAll('input[name="code-select"]');
+        const rotateContainer = document.querySelector('.code-3d');
+        const subtitleCode = document.querySelector('.code-subtitle');
+        let codeTxts = [
             {
-                title: 'VIDEO',
-                sub: '2020.08 <br><br>고등학교 3학년, 졸업작품 프로젝트로 진행한 비주얼 모션그래픽스 동영상의 포스터다.<br>'
+                sub: '웹 표준을 준수, 다양한 태그를 사용하고 CSS, JS와 연동'
             },
             {
-                title: 'DESIGN',
-                sub: '2020.07 <br><br>' +
-                    '닌텐도사의 <젤다의 전설: 브레스 오브 더 와일드>의 인게임 집을' +
-                    '<br>3Ds MAX와 Cinema 4D + Octane Render를 이용하여 제작하였다.' +
-                    '<br><br>3Ds MAX로는 오브젝트 모델링을 진행하였고, 재질과 라이팅을 Cinema 4D와 Octane Render를 이용하여 제작했다.'
+                sub: '다양한 스타일을 적용하고 레이아웃 배치, 애니메이션, 가상 클래스'
             },
             {
-                title: 'CODE',
-                sub: '2023.12 <br><br>' +
-                    '대학교 [콘텐츠디자인] 중간과 기말 프로젝트로 UI/UX 관련 가상의 페이지를 제작하였다.' +
-                    '<br>큰 키워드 아랍 에미리트라는 국가를 지정하였고 사막의 반도체를 생각하며 콘텐츠를 기획했다.'
-
+                sub: '기본 문법에 대한 이해, DOM조작, 동적 웹 페이지 구현'
+            },
+            {
+                sub: '여러 문법을 이용하여 텍스트를 작성할 수 있으며 이미지, 테이블, 코드 등을 작성<br>Markdownr기반의 메모 플랫폼 Obsidian에서 활용'
+            },
+            {
+                sub: '리포지토리를 생성하고 사이트 배포'
+            },
+            {
+                sub: 'Github 리포지토리를 로컬 저장공간에 clone<br>' +
+                    '연결된 리포지토리에서 변경사항에 대하여 commit 및 push<br>' +
+                    '여러 기기에서 리포지토리를 관리하기 위한 git pull origin'
             },
         ];
 
-
-
-        imgsClick.forEach((img, index) => {
-            img.addEventListener('click', (event) => {
-                let src;
-                if (img.querySelector('img')) {
-                    src = img.querySelector('img').src;
-                } else if (img.querySelector('video')) {
-                    src = img.querySelector('video').src;
-                }
-
-                    modalImg.style.backgroundImage = 'url('+ src +')';
-                    modalTitle.innerHTML = texts[index].title;
-                    modalSub.innerHTML = texts[index].sub;
-
-                    modal.classList.add('active');
-                    bg.classList.add('active');
-
+        selectCode.forEach((i, index) => {
+            i.addEventListener('click', () => {
+                rotateContainer.className = 'code-3d';
+                rotateContainer.classList.add(`case${index}`);
+                subtitleCode.innerHTML = codeTxts[index].sub;
             })
-        })
-
-        modalBtn.addEventListener('click', () => {
-            modalImg.innerHTML = '';
-            modal.classList.remove('active');
-            bg.classList.remove('active');
         })
 
     }
